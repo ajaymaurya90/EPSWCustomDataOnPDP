@@ -28,7 +28,7 @@ class EPSWCustomDataOnPDP extends Plugin
             $customFieldSetRepository->create([
                 [
                     'name' => self::CUSTOM_FIELD_SET,
-                    'relation' => [
+                    'relations' => [
                                 [
                                     'entityName' => 'product'
                                 ]
@@ -58,8 +58,8 @@ class EPSWCustomDataOnPDP extends Plugin
                                 'type' => 'media',
                                 'componentName' => 'sw-media-field',
                                 'label' => [
-                                    'en-GB' => 'Video Url',
-                                    'de-DE' => 'Video Url'
+                                    'en-GB' => 'Upload Video',
+                                    'de-DE' => 'Video hochladen'
                                 ]
                              ]
                         ],

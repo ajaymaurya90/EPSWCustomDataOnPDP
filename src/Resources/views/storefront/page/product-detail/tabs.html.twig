@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+
+{% block page_product_detail_tabs_content %}
+    {{ parent() }}
+
+    <div class="row">
+        <div class="col-sm">
+            {# get image media as batch and extract as object #}
+            {% set imageId = page.product.translated.customFields.epsw_product_detail_media_image %}
+            {% set imageMediaCollection = searchMedia([imageId], context.context) %}
+            {% set imageMedia = imageMediaCollection.get(imageId) %}
+            <img style="height:400px; width:400px" src="{{ imageMedia.url }}">
+        </div>
+        <div class="col-sm">
+            {# Show Youtube video #}
+            <iframe height="315" width="420" src="{{ page.product.translated.customFields.epsw_product_detail_media_youtube_video }}" ></iframe>
+        </div>
+        <div class="col-sm">
+            {# get normal video media as batch and extract as object #}
+            {% set normalVideoId = page.product.translated.customFields.epsw_product_detail_media_normal_video %}
+            {% set normalVideMediaCollection = searchMedia([normalVideoId], context.context) %}
+            {% set normalVideoMedia = normalVideMediaCollection.get(normalVideoId) %}
+            {# Show Normal video #}
+            <video width="320" height="240" controls>
+                <source src="{{ normalVideoMedia.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+    </div>
+  </div>
+    
+    
+    
+    
+
+{% endblock %}
+

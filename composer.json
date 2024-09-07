@@ -1,18 +1,28 @@
 {
-  "name": "swag/plugin-skeleton",
-  "description": "Skeleton plugin",
+  "name": "epsw/custom-data-on-pdp",
+  "description": "This plugin provide feature to add custom media data with each product and that will also visible on product detail page",
   "type": "shopware-platform-plugin",
+  "version": "1.0.0",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Ajay Shankar Maurya",
+      "role": "Manufacturer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "EPSWCustomDataOnPDP\\": "src/"
     }
   },
+  "require": {
+    "shopware/core": "6.4.* || 6.5.*"
+  },
   "extra": {
     "shopware-plugin-class": "EPSWCustomDataOnPDP\\EPSWCustomDataOnPDP",
     "label": {
-      "de-DE": "Skeleton plugin",
-      "en-GB": "Skeleton plugin"
+      "de-DE": "EPSW Benutzerdefinierte Mediendaten",
+      "en-GB": "EPSW Custom Media Data"
     }
   }
 }
